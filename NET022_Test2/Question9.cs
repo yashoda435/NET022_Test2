@@ -29,37 +29,5 @@ namespace NET022_Test2
 
             Console.ReadLine();
         }
-
-
-
-
-
-
-        Func<int> randomNumberGenerator = () => new Random().Next(1, 10001);
-            int randomNumber = randomNumberGenerator();
-            Console.WriteLine("Random Number: " + randomNumber);
-
-            
-
-            // Code to item 2
-            static string generateNumberMessage(Func<int> randomNumberGenerator) 
-            {
-                int generatedNumber = randomNumberGenerator();
-                return $"The generates  Number is: {generatedNumber}";
-            }
-
-            // Code to item 3
-            Task<int> generateNumberTask = Task.Factory.StartNew(() => randomNumberGenerator());
-            generateNumberTask.ContinueWith(task1 =>
-            {
-                int generatedNumber = randomNumberGenerator();
-                String message = generateNumberMessage(generatedNumber); 
-                Console.WriteLine(message);
-            })
-
-        }
-
-
-
     }
 }
